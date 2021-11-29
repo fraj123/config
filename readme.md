@@ -19,9 +19,13 @@ mkdir -p ~/.config
 4. Clone config directory
 ```
 cd ~
-git clone
+git clone git@github.com:fraj123/config.git
 ```
 5. Symbolic link
 ```
 ln -s ~/config/nvim/ ~/.config/nvim
+```
+6. Install Plugins
+```
+:PluginInstall
 ```
