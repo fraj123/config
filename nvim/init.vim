@@ -24,6 +24,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Yggdroot/indentLine' 
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/vim-easy-align'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 " Tmux
 " Plug 'preservim/vimux'
 " Plug 'christoomey/vim-tmux-navigator'
