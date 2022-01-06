@@ -2,6 +2,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " Color
 Plug 'joshdick/onedark.vim'
+"Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 
 " Tree
@@ -15,16 +16,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
+ 
 " Fuzzy Search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
+ 
 " IDE
 Plug 'Yggdroot/indentLine' 
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/vim-easy-align'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+" Comment
+Plug 'preservim/nerdcommenter'
+
 " Tmux
 " Plug 'preservim/vimux'
 " Plug 'christoomey/vim-tmux-navigator'
@@ -70,7 +74,9 @@ set clipboard=unnamedplus
 
 au BufNewFile,BufRead ssh_config,*/.ssh/config.d/*  setf sshconfig
 
+
 colorscheme onedark
+"colorscheme nord
 " }}}
 
 " Onedarkconf: {{{
@@ -82,6 +88,12 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+" }}}
+
+" Lightline: {{{
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 " }}}
 
 " Vim_Align_Plugin: {{{
