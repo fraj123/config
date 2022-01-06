@@ -25,6 +25,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/vim-easy-align'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+
+" Code Completation
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'hashivim/vim-terraform'
 " Tmux
 " Plug 'preservim/vimux'
 " Plug 'christoomey/vim-tmux-navigator'
@@ -44,6 +48,7 @@ set shiftwidth=4
 set softtabstop=-1
 set tabstop=8
 set textwidth=80
+
 set title
 set number
 set numberwidth=1
@@ -68,10 +73,11 @@ set shortmess+=c
 
 set clipboard=unnamedplus
 
-au BufNewFile,BufRead ssh_config,*/.ssh/config.d/*  setf sshconfig
+au bufnewfile,bufread ssh_config,*/.ssh/config.d/*  setf sshconfig
 
 colorscheme onedark
 " }}}
+
 
 " Onedarkconf: {{{
 if (empty($TMUX))
@@ -92,6 +98,7 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 
 " Nerdtree binds
+let NERDTreeShowHidden=1 
 nnoremap <Space>t :NERDTreeToggle<CR>
 nnoremap <Space>f :NERDTreeFind<CR>
 
