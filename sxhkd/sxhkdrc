@@ -119,3 +119,49 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Custom Keys
+# Increase and reduce volume
+ctrl + F2
+	amixer -D pulse sset Master 5%-
+
+ctrl + F1
+	amixer -D pulse sset Master toggle
+        
+ctrl + F3
+	amixer -D pulse sset Master 5%+
+
+# Media Keys for spotify
+ctrl + F6
+        dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+
+ctrl + F5
+        dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+ctrl + F7
+        dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+
+# Screenshot options
+Print
+        maim $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png 
+
+super + Print
+        maim -s $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png 
+
+alt + Print
+        maim -i "$(xdotool getactivewindow)" $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png 
+        
+super + shift + Print
+        maim -s | xclip -sel clipboard -t image/png
+
+alt + shift + Print
+        maim -i "$(xdotool getactivewindow)" | xclip -sel clipboard -t image/png
+
+# Powermenu
+super + Pause
+        ~/.config/rofi/scripts/powermenu
+
+
+# Rofi clipboard manager
+ctrl + F9
+        rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
