@@ -19,6 +19,9 @@ Plug 'mattn/emmet-vim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Snippets
 
 "Plug Typing
@@ -100,23 +103,11 @@ au bufnewfile,bufread ssh_config,*/.ssh/config.d/*  setf sshconfig
 " Theme
 " =============================================================================
 
-"colorscheme onedark
-"set background=2ark
-"colorscheme nord
 colorscheme gruvbox
 " }}}
 
-
-" Onedarkconf: {{{
-"if (empty($TMUX))
-  "if (has("nvim"))
-    "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  "endif
-  "if (has("termguicolors"))
-    "set termguicolors
-  "endif
-"endif
-" }}}
+" use <c-space>for trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Lightline: {{{
 let g:lightline = {
