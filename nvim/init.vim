@@ -45,6 +45,8 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'alvan/vim-closetag'
 "
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+
 Plug 'hashivim/vim-terraform'
 
 Plug 'SirVer/ultisnips'
@@ -68,10 +70,10 @@ scriptencoding utf-8
 set backspace=indent,eol,start
 set expandtab
 set shiftround
-set shiftwidth=2
+set shiftwidth=4
 set softtabstop=-1
-set tabstop=8
-set textwidth=80
+set tabstop=4
+set textwidth=140
 
 set title
 set number
@@ -108,6 +110,7 @@ colorscheme gruvbox
 
 " use <c-space>for trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
+nmap <leader>ac  <Plug>(coc-codeaction)
 
 " Lightline: {{{
 let g:lightline = {
